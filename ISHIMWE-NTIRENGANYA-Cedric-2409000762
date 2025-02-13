@@ -1,0 +1,29 @@
+from cryptography.fernet import Fernet
+# Generate a key
+key = Fernet.generate_key()
+from cryptography.fernet import Fernet
+# Generate a key
+key = Fernet.generate_key()
+cipher_suite = Fernet(key)
+
+#First name to encrypt
+message = b"First name ISHIMWE NTIRENGANYA " # added b"" to make it bytes
+
+#Encrypt
+encrypted_message = cipher_suite.encrypt(message)
+print(encrypted_message)
+
+#Decrypt
+decrypted_message = cipher_suite.decrypt(encrypted_message)
+print(decrypted_message)
+
+#First name to encrypt
+message1 = b"Last name Cedric"
+
+#Encrypt
+encrypted_message = cipher_suite.encrypt(message1)
+print(encrypted_message)
+
+#Decrypt
+decrypted_message = cipher_suite.decrypt(encrypted_message)
+print(decrypted_message)
